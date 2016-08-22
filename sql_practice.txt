@@ -1,0 +1,153 @@
+INSERT INTO `students`.`teacher`
+(`first_name`,
+`last_name`,
+`age`,
+`teacher_salary`)
+VALUES
+('Sally', 'Jones', 46, 50000.50),
+('Tom', 'Smith', 35, 45000.75),
+('Janet', 'Johnson', 55, 70000.00);
+
+SELECT * FROM teacher
+
+
+INSERT INTO `students`.`class`
+(`name`,
+`description`,
+`teacher_id`)
+VALUES
+('20th Century Novel', 'Analysis of 20th century novels', 1),
+('Business Writing', 'Learn to write business correspondence', 1),
+('Advanced Topics', 'Advanced Topics in Mathemetics', 2),
+('Trigonometry', 'Covers introductory trig', 2),
+('US History I', 'US History up to WWI', 3),
+('US History II', 'US History after WWI', 3);
+
+SELECT * FROM class
+
+
+INSERT INTO `students`.`student`
+(`first_name`,
+`last_name`,
+`grade`,
+`gpa`)
+VALUES
+('Adam', 'Bengermino', 12, 4.00),
+('Tucker', 'Allard', 10, 4.00),
+('Beth', 'Roche', 12, 4.00),
+('Ches', 'Mary', 12, 4.00),
+('Dawson', 'Leary', 11, 3.75),
+('Jen', 'Smith', 9, 2.45),
+('Albert', 'Paul', 9, 3.65),
+('Brendon', 'Bengermino', 10, 3.95),
+('Nicole', 'Dobelstein', 11, 3.99),
+('Brett', 'Straus', 10, 3.30);
+
+SELECT * FROM student
+
+
+INSERT INTO `students`.`class_student`
+(`class_id`,
+`student_id`)
+VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 2),
+(5, 3),
+(6, 3),
+(1, 4),
+(2, 4),
+(3, 5),
+(4, 5),
+(5, 6), 
+(6, 6),
+(1, 7),
+(2, 7),
+(3, 8),
+(4, 8),
+(5, 9),
+(6, 9),
+(1, 10); 
+
+SELECT * FROM students.class_student;
+
+
+SELECT `teacher`.`teacher_id`,
+    `teacher`.`first_name`,
+    `teacher`.`last_name`,
+    `teacher`.`age`,
+    `teacher`.`teacher_salary`
+FROM `students`.`teacher`;
+SELECT * FROM students.class_student;
+
+
+SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`,
+    `class`.`teacher_id`
+FROM `students`.`class`;
+
+
+SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `students`.`student`;
+
+
+SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`
+    
+FROM `students`.`class`
+WHERE teacher_id LIKE 1; 
+
+
+SELECT `class_student`.`class_studentid`,
+    `class_student`.`class_id`,
+    `class_student`.`student_id`
+FROM `students`.`class_student`
+WHERE class_id LIKE 1;
+
+
+SELECT `class_student`.`class_studentid`,
+    `class_student`.`class_id`,
+    `class_student`.`student_id`
+FROM `students`.`class_student`
+WHERE student_id LIKE 1;
+
+
+SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `students`.`student`
+WHERE first_name LIKE 'A%';
+
+
+UPDATE `students`.`teacher`
+SET`first_name` = 'Superman'
+WHERE `teacher_id` = 1;
+
+
+UPDATE `students`.`class`
+SET`name` = 'Underwater Basket Weaving'
+
+WHERE `class_id` = 1;
+
+SELECT * FROM class
+
+
+UPDATE `students`.`student`
+SET`first_name` = 'Wonder Woman'
+WHERE `student_id` = 1;
+
+
+DELETE FROM `students`.`student`
+WHERE student_id = 10;
+
+
+
